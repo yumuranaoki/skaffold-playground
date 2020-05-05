@@ -1,0 +1,33 @@
+apiVersion: skaffold/v2beta2
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - context: bff
+      image: bff
+    - context: users-service
+      image: users-service
+deploy:
+  kubectl:
+    manifests:
+      - ./bff/k8s-manifests/*
+      - ./users-service/k8s-manifests/*
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    build:
+      artifacts:
+        - context: bff
+          image: kneegorilla/bff
+          sync:
+            manual:
+              - src: "src/**/*.ts"
+                dest: .
+        - context: users-service
+          image: kneegorilla/users-service
+          sync:
+            manual:
+              - src: "src/**/*.ts"
+                dest: .

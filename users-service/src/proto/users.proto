@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package users;
+
+service Users {
+  rpc Show (UsersRequest) returns (UsersResponse);
+}
+
+message UsersRequest {
+  string name = 1;
+}
+
+message UsersResponse {
+  string message = 1;
+}

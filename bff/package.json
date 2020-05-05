@@ -1,0 +1,27 @@
+{
+  "name": "kneegorilla-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/google-protobuf": "^3.7.2",
+    "@types/node": "^13.13.4",
+    "grpc-tools": "^1.8.1",
+    "grpc_tools_node_protoc_ts": "^3.0.0",
+    "parcel-bundler": "^1.12.4",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "ts-protoc-gen": "^0.12.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "google-protobuf": "^3.12.0-rc.1",
+    "grpc": "^1.24.2"
+  }
+}
